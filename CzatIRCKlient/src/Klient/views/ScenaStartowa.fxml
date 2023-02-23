@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Klient.ControllerScenaStartowa">
+   <children>
+      <Label layoutX="15.0" layoutY="25.0" text="Witamy na czacie tematycznym!">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="44.0" layoutY="81.0" mnemonicParsing="false" onAction="#actionBtnLogowanie" onKeyPressed="#onKeyPressedBtnLogowanie" prefHeight="39.0" prefWidth="107.0" text="Logowanie" />
+      <Button layoutX="161.0" layoutY="81.0" mnemonicParsing="false" onAction="#actionBtnRejestracja" onKeyPressed="#onKeyPressedBtnRejestracja" prefHeight="39.0" prefWidth="107.0" text="Rejestracja" />
+   </children>
+</Pane>

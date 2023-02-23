@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="546.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Klient.ControllerScenaOknoCzatu">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="876.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Sesja">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionMenuItemWyjdz" text="Wyjdź" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionMenuItemZmienHaslo" text="Zmień hasło" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane layoutY="25.0" prefHeight="522.0" prefWidth="876.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Czat tematyczny">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="493.0" prefWidth="723.0">
+                     <children>
+                        <ComboBox fx:id="comboBoxListaPokojow" layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="316.0" promptText="Wybierz pokój" />
+                        <Button fx:id="buttonDolaczDoPokoju" layoutX="351.0" layoutY="14.0" mnemonicParsing="false" onAction="#actionButttonDolaczDoPokoju" prefHeight="44.0" prefWidth="235.0" text="Dołącz do pokoju" />
+                        <TextArea fx:id="textArea" disable="true" editable="false" layoutX="14.0" layoutY="68.0" prefHeight="345.0" prefWidth="573.0" />
+                        <TextField fx:id="textFieldWiadomosc" disable="true" layoutX="14.0" layoutY="425.0" onKeyPressed="#onKeyPressedTextFieldWiadomosc" prefHeight="54.0" prefWidth="448.0" />
+                        <Button fx:id="buttonWyslij" disable="true" layoutX="469.0" layoutY="425.0" mnemonicParsing="false" onAction="#onActionButtonWyslij" onKeyPressed="#onKeyPressedButtonWyslij" prefHeight="55.0" prefWidth="117.0" text="Wyślij" />
+                        <ListView fx:id="listView" layoutX="599.0" layoutY="38.0" prefHeight="375.0" prefWidth="263.0" />
+                        <Button fx:id="buttonOdswiez" disable="true" layoutX="800.0" layoutY="424.0" mnemonicParsing="false" onAction="#actionButtonOdswiez" onKeyPressed="#onKeyPressedButtonOdswiez" prefHeight="57.0" prefWidth="61.0" text="Odśwież" />
+                        <Button fx:id="buttonDodaj" disable="true" layoutX="600.0" layoutY="424.0" mnemonicParsing="false" onAction="#actionButtonDodajDoZnajomych" onKeyPressed="#onKeyPressedButtonDodaj" prefHeight="57.0" prefWidth="191.0" text="Dodaj do znajomych" />
+                        <Label layoutX="645.0" layoutY="6.0" prefHeight="30.0" prefWidth="172.0" text="Użytkownicy online">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Znajomi">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableViewListaZnajomych" layoutX="14.0" layoutY="49.0" prefHeight="375.0" prefWidth="416.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tableViewZaproszenia" layoutX="446.0" layoutY="51.0" prefHeight="373.0" prefWidth="416.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="525.0" layoutY="14.0" text="Zaproszenia do znajomych">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="145.0" layoutY="14.0" text="Lista znajomych">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="446.0" layoutY="436.0" mnemonicParsing="false" onAction="#actionButtonPrzyjmijZaproszenie" text="Przyjmij zaproszenie" />
+                        <Button layoutX="587.0" layoutY="436.0" mnemonicParsing="false" onAction="#actionButtonDeleteInvite" text="Usuń zaproszenie" />
+                        <Button layoutX="801.0" layoutY="436.0" mnemonicParsing="false" onAction="#actionButtonOdswiezZaproszenia" text="Odśwież" />
+                        <Button layoutX="14.0" layoutY="436.0" mnemonicParsing="false" onAction="#actionButtonDeleteFromFriends" text="Usuń ze znajomych" />
+                        <Button layoutX="369.0" layoutY="436.0" mnemonicParsing="false" onAction="#actionButtonOdswiezListaZnajomych" text="Odśwież" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabAdministrator" disable="true" text="Administrator">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="498.0" prefWidth="876.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Pokoje">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="189.0">
+                                       <children>
+                                          <TableView fx:id="tableViewPokoje" layoutX="392.0" layoutY="14.0" onMouseClicked="#onMouseClikedTableViewPokoje" prefHeight="376.0" prefWidth="470.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="C1" />
+                                              <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                          </TableView>
+                                          <Button fx:id="buttonOdswiezPokoje" layoutX="801.0" layoutY="399.0" mnemonicParsing="false" onAction="#actionButtonOdswiezPokoje" text="Odśwież" />
+                                          <Label layoutX="144.0" layoutY="79.0" text="Id:   " />
+                                          <TextField fx:id="textFieldIdPokoju" editable="false" layoutX="167.0" layoutY="75.0" />
+                                          <TextField fx:id="textFieldNazwaPokoju" layoutX="167.0" layoutY="108.0" />
+                                          <Label layoutX="79.0" layoutY="112.0" text="Nazwa pokoju:   " />
+                                          <Button layoutX="39.0" layoutY="177.0" mnemonicParsing="false" onAction="#actionButtonAktualizujPokoj" text="Aktualizuj nazwę" />
+                                          <Button layoutX="278.0" layoutY="177.0" mnemonicParsing="false" onAction="#actionButtonUsunPokoj" text="Usuń pokój" />
+                                          <Button layoutX="156.0" layoutY="177.0" mnemonicParsing="false" onAction="#actionButtonDodajPokoj" text="Dodaj nowy pokój" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Użytkownicy">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableViewUzytkownicy" layoutX="320.0" layoutY="14.0" onMouseClicked="#onMouseClikedTableViewUzytkownicy" prefHeight="383.0" prefWidth="542.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="C1" />
+                                              <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                          </TableView>
+                                          <Button layoutX="801.0" layoutY="409.0" mnemonicParsing="false" onAction="#actionButtonOdswiezUzytkownicy" text="Odśwież" />
+                                          <Label layoutX="127.0" layoutY="47.0" text="Id:   " />
+                                          <TextField fx:id="textFieldIdUzytkownika" editable="false" layoutX="150.0" layoutY="43.0" />
+                                          <TextField fx:id="textFieldLoginUzytkownika" layoutX="150.0" layoutY="78.0" />
+                                          <TextField fx:id="textFieldEmailUzytkownika" layoutX="150.0" layoutY="112.0" />
+                                          <Label layoutX="106.0" layoutY="82.0" text="Login:   " />
+                                          <Label layoutX="104.0" layoutY="116.0" text="E-mail:   " />
+                                          <ComboBox fx:id="comboBoxCzyAdmin" layoutX="150.0" layoutY="146.0" prefWidth="150.0" />
+                                          <ComboBox fx:id="comboBoxCzyZalogowany" layoutX="150.0" layoutY="181.0" prefWidth="150.0" />
+                                          <TextField fx:id="textFieldIdPokojuUzytkownika" layoutX="151.0" layoutY="216.0" />
+                                          <Label layoutX="80.0" layoutY="150.0" text="Czy admin:   " />
+                                          <Label layoutX="50.0" layoutY="185.0" text="Czy zalogowany:   " />
+                                          <Label layoutX="88.0" layoutY="220.0" text="Id pokoju:   " />
+                                          <Button layoutX="24.0" layoutY="260.0" mnemonicParsing="false" onAction="#actionButtonAktualizujUzytkownika" text="Aktualizuj dane" />
+                                          <Button layoutX="139.0" layoutY="260.0" mnemonicParsing="false" onAction="#actionButtonDodajUzytkownika" text="Dodaj nowego użytkownika" />
+                                          <Button layoutX="24.0" layoutY="294.0" mnemonicParsing="false" onAction="#actionButtonUsunUzytkownika" text="Usuń użytkownika" />
+                                          <Button layoutX="140.0" layoutY="294.0" mnemonicParsing="false" onAction="#actionButtonDodajDoCzarnej" text="Dodaj email do czarnej listy" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Czarna lista">
+                                  <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="189.0">
+                                       <children>
+                                          <TableView fx:id="tableViewCzarnaLista" layoutX="393.0" layoutY="14.0" onMouseClicked="#onMouseClikedTableViewCzarnaLista" prefHeight="377.0" prefWidth="469.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="C1" />
+                                              <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                          </TableView>
+                                          <Button layoutX="801.0" layoutY="404.0" mnemonicParsing="false" onAction="#actionButtonOdswiezCzarnaLista" text="Odśwież" />
+                                          <TextField fx:id="textFieldIdCzarnaLista" editable="false" layoutX="142.0" layoutY="45.0" />
+                                          <TextField fx:id="textFieldEmailZCzarnejListy" layoutX="142.0" layoutY="82.0" />
+                                          <Label layoutX="119.0" layoutY="49.0" text="Id:   " />
+                                          <Label layoutX="96.0" layoutY="86.0" text="E-mail:   " />
+                                          <Button layoutX="158.0" layoutY="124.0" mnemonicParsing="false" onAction="#actionButtonUsunZCzarnejListy" text="Usuń z czarnej listy" />
+                                       </children></AnchorPane>
+                                  </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

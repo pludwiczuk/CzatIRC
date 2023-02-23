@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="262.0" prefWidth="314.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Klient.ControllerRejestracja">
+   <children>
+      <Label layoutX="109.0" layoutY="21.0" text="Rejestracja">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="72.0" text="Login:">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </Label>
+      <Label layoutX="83.0" layoutY="137.0" text="Hasło:">
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </Label>
+      <Label layoutX="39.0" layoutY="172.0" text="Powtórz hasło:">
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </Label>
+      <Label layoutX="82.0" layoutY="104.0" text="E-mail:">
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="textFieldLogin" layoutX="126.0" layoutY="68.0" onKeyPressed="#onKeyPressedTextFieldLogin" />
+      <TextField fx:id="textFieldEmail" layoutX="126.0" layoutY="100.0" onKeyPressed="#onKeyPressedTextFieldEmail" />
+      <PasswordField fx:id="passFieldHaslo" layoutX="126.0" layoutY="133.0" onKeyPressed="#onKeyPressedPassHaslo" />
+      <PasswordField fx:id="passFieldPowtorzHaslo" layoutX="126.0" layoutY="168.0" onKeyPressed="#onKeyPressedPassPowtorzHaslo" />
+      <Button fx:id="btnZarejestruj" layoutX="204.0" layoutY="217.0" mnemonicParsing="false" onAction="#actionZarejestruj" onKeyPressed="#onKeyPressedBtnZarejestruj" text="Zarejestruj" />
+      <Label fx:id="label" layoutX="137.0" layoutY="193.0" text="Wpisane hasła są różne!" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>

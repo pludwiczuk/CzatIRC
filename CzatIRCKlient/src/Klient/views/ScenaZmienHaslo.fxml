@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="195.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Klient.ControllerScenaZmienHaslo">
+   <children>
+      <PasswordField fx:id="passwordField1" layoutX="113.0" layoutY="31.0" onKeyPressed="#onKeyPressedPasswordField1" />
+      <PasswordField fx:id="passwordField2" layoutX="113.0" layoutY="68.0" onKeyPressed="#onKeyPressedPasswordField2" />
+      <PasswordField fx:id="passwordField3" layoutX="113.0" layoutY="104.0" onKeyPressed="#onKeyPressedPasswordField3" />
+      <Button fx:id="buttonZmien" layoutX="210.0" layoutY="140.0" mnemonicParsing="false" onAction="#actionButtonZmien" text="Zmień" />
+      <Label layoutX="43.0" layoutY="35.0" text="Stare hasło:   " />
+      <Label layoutX="37.0" layoutY="72.0" text="Nowe hasło:   " />
+      <Label layoutX="25.0" layoutY="108.0" text="Powtórz hasło:   " />
+   </children>
+</AnchorPane>
